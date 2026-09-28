@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Mostrar en una página varios parámetros para configurar el aspecto de otra página: color de fondo, tipo de letra,
+    alineación del texto, imagen del banner (entre 3 posibles), y demás reglas de estilo que se te ocurran. Una vez
+    enviada la información se mostrará una página con el contenido que desees acorde a los estilos elegidos. -->
+
+    <form action="pagina.php" method="get">
+        <label for="color">Color(Hex)</label>
+        <input type="text" name="color"><br>
+        <label for="letra">Tipo de letra</label>
+        <input type="text" name="letra"><br>
+        <label>Alineación del texto:</label>
+        <input type="radio" name="alineacion" value="left"> Izquierda
+        <input type="radio" name="alineacion" value="center"> Centro
+        <input type="radio" name="alineacion" value="right"> Derecha <br>
+        <label>Imagen del banner:</label>
+        <input type="radio" name="banner" value="https://upload.wikimedia.org/wikipedia/commons/6/62/YouTube_social_white_square_%282024%29.svg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"> youtube
+        <input type="radio" name="banner" value="https://p16-va-tiktok.ibyteimg.com/obj/musically-maliva-obj/d6f4bd0fb0d0f63a74a1801702026314"> tiktok
+        <input type="radio" name="banner" value="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1280px-Instagram_logo_2022.svg.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail"> instagram
+        <label>Tamaño letra</label>
+        <input type="number" name="tamanio"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

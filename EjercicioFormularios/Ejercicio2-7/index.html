@@ -9,6 +9,23 @@
     <!-- Diseñar una web para jugar a la lotería primitiva. En un formulario se pedirá introducir la combinación de 6
     números entre 1 y 49 y el número de serie entre 1 y 999. Mostrar la combinación generada y la introducida por
     el usuario en dos filas de una tabla. -->
-    
+    <form action="primitiva.php" method="get">
+        <p>Elige un número (1-49) y añade la serie (1-999)</p>
+        <label for="numero1">1-</label>
+        <input type="number" name="numero1" min="1" max="49" required>
+        <label for="numero2">2-</label>
+        <input type="number" name="numero2" min="1" max="49" required>
+        <label for="numero3">3-</label>
+        <input type="number" name="numero3" min="1" max="49" required>
+        <label for="numero4">4-</label>
+        <input type="number" name="numero4" min="1" max="49" required>
+        <label for="numero5">5-</label>
+        <input type="number" name="numero5" min="1" max="49" required>
+        <label for="numero6">6-</label>
+        <input type="number" name="numero6" min="1" max="49" required>
+        <label for="serie">Serie</label>
+        <input type="number" name="serie" min="1" max="999" required>
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
