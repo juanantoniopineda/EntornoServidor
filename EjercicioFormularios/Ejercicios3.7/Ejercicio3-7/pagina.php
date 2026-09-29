@@ -3,7 +3,7 @@
     $fuente = $_GET['letra'];
     $alineacion = $_GET['alineacion'];
     $banner = $_GET['banner'];
-    $tamano = $_GET['tamanio'];
+    $tamanio = $_GET['tamanio'];
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ body {
     background-color: <?php echo $color; ?>;
     font-family: <?php echo $fuente; ?>;
     text-align: <?php echo $alineacion; ?>;
-    font-size: <?php echo $tamanio; ?>px;
+    font-size: <?php echo $tamanio."%"; ?>;
 }
 
 img {

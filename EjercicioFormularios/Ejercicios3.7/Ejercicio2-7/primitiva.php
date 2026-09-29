@@ -20,6 +20,7 @@
         echo "Tuyos N1: " . $n1 . " | N2: " . $n2 . " | N3: " . $n3 . " | N4: " . $n4 . " | N5: " . $n5 . " | N6: " . $n6 . " | Serie: " . $serie;
         echo "<br>";
         echo "Generado N1: " . rand(1, 49) . " | N2: " . rand(1, 49) . " | N3: " . rand(1, 49) . " | N4: " . rand(1, 49) . " | N5: " . rand(1, 49) . " | N6: " . rand(1, 49) . " | Serie: " . rand(1, 999);
+        
     ?>
 </body>
 </html>

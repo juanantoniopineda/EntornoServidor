@@ -13,7 +13,7 @@
         $a = $_GET['altura'];
         $r = $_GET['radio'];
 
-        echo "El resultado es el siguiente: ". round((pi()*($r*$r)*$a),2);
+        echo "El resultado es el siguiente: ", round((pi()*($r*$r)*$a),2);
     ?>
 
 </body>
