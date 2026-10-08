@@ -6,35 +6,55 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-        $numeros = [];
 
-        for ($i = 0; $i < 100; $i++) {
-            $numeros[$i] = rand(0, 20);
+    <?php 
+        if (isset($_POST["array"])) {
+            $numeros = explode(",", $_POST["array"]);
+        } else {
+            $numeros = [];
+
+            for ($i = 0; $i < 100; $i++) {
+                $numeros[$i] = rand(0, 20);
+            }
         }
     ?>
 
     <form action="ejercicio4.php" method="post">
+
         <label for="num1">Numero a cambiar:</label>
         <input type="number" name="num1">
+
         <label for="num2">Nuevo numero:</label>
         <input type="number" name="num2">
-        <input type="submit" value="enviar">
+
+        <input type="hidden" name="array" value="<?= implode(",", $numeros) ?>">
+
+        <button>enviar</button>
+
     </form>
 
     <?php 
-        if(isset($_POST["num1"]) && isset($_POST["num2"])){
+
+        if (isset($_POST["num1"]) && isset($_POST["num2"])) {
+
             for ($i = 0; $i < 100; $i++) {
-                if($numeros[$i] == $_POST["num1"]){
-                    echo "<span style='color:red''>".$_POST["num2"]."</span> ";
-                }else{
-                    echo "$numeros[$i] ";
+
+                if ($numeros[$i] == $_POST["num1"]) {
+                    echo "<span style='color:red'>" . $_POST["num2"] . "</span> ";
+                } else {
+                    echo $numeros[$i] . " ";
                 }
+
             }
-        }else{
-            echo"<p>Aqui se va a mostrar el resultado</p>";
+
+        } else {
+
+            for ($i = 0; $i < 100; $i++) {
+                echo $numeros[$i] . " ";
+            }
+
         }
-        
+
     ?>
 
 </body>
