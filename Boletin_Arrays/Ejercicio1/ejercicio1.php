@@ -16,6 +16,10 @@
 </style>
 
 <body>
+
+<!-- Crea un array con las temperaturas medias de siete días. Muestra una tabla con dos columnas: Día y
+Temperatura. Al final muestra la temperatura media semanal. Usa foreach. -->
+
     <?php
     $semana = [
         "Lunes" => 17,

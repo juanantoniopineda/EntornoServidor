@@ -12,6 +12,9 @@
     }
 </style>
 <body>
+<!-- 
+Genera 12 números aleatorios entre 1 y 20. Guárdalos en un array. Muestra una tabla con tres columnas:
+número, cuadrado y cubo. No crees tres arrays distintos; calcula cuadrado y cubo al mostrar. -->
     <?php 
         $numeros = [];
         
