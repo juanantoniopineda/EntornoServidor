@@ -1,14 +1,12 @@
 <?php
 if (!isset($_REQUEST['aspirantes'])) {
     $aspirantes = [];
-    $aspiranteTexto ="";
 } else {
     $aspirantes = unserialize(base64_decode($_REQUEST['aspirantes']));
     $aspirantes[$_REQUEST['nombre']] = $_REQUEST['datos'];
-    $aspiranteTexto=base64_encode(serialize($aspirantes)); 
 };
 
-
+$aspiranteTexto=base64_encode(serialize($aspirantes)); 
 
 ?>
 
