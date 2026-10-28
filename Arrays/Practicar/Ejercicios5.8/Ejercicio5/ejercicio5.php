@@ -3,10 +3,13 @@ if (!isset($_REQUEST['aspirantes'])) {
     $aspirantes = [];
 } else {
     $aspirantes = unserialize(base64_decode($_REQUEST['aspirantes']));
-    $aspirantes[$_REQUEST['nombre']] = $_REQUEST['datos'];
+
+    if (isset($_REQUEST['nombre']) && isset($_REQUEST['datos'])) {
+        $aspirantes[$_REQUEST['nombre']] = $_REQUEST['datos'];
+    }
 };
 
-$aspiranteTexto=base64_encode(serialize($aspirantes)); 
+$aspiranteTexto = base64_encode(serialize($aspirantes));
 
 ?>
 
@@ -36,7 +39,6 @@ $aspiranteTexto=base64_encode(serialize($aspirantes));
         <input type="hidden" name="aspirantes" value="<?php echo $aspiranteTexto; ?>">
         <input type="submit" value="Enviar">
     </form>
-
 </body>
 
 </html>
