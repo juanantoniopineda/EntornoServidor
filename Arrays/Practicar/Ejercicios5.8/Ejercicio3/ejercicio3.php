@@ -1,4 +1,3 @@
-
 <?php
 if (!isset($_REQUEST['tabla'])) {
     $tabla = [];
@@ -22,11 +21,6 @@ if (!isset($_REQUEST['tabla'])) {
             $cont--;
         }
     }
-}
-
-if ($cont < 0) {
-    header("Location: fallo.php");
-    exit;
 }
 ?>
 
@@ -71,7 +65,7 @@ if ($cont < 0) {
     <h1>Adivina al personaje</h1>
 
     <p>Te quedan estos intentos: <?php echo $cont; ?></p>
-
+    <?php if($cont>0){?>
     <table>
         <?php for ($i = 0; $i < 10; $i++) { ?>
             <tr>
@@ -79,7 +73,7 @@ if ($cont < 0) {
 
                     <?php if ($tabla[$i][$j] == 0) { ?>
                         <th class="oculto">
-                            <a href="ejercicio3.php?fila=<?php echo $i; ?>&columna=<?php echo $j; ?>&tabla=<?php echo urlencode(base64_encode(serialize($tabla))); ?>&cont=<?php echo $cont; ?>"></a>
+                            <a href="ejercicio3.php?fila=<?php echo $i; ?>&columna=<?php echo $j; ?>&tabla=<?php echo base64_encode(serialize($tabla)); ?>&cont=<?php echo $cont; ?>"></a>
                         </th>
                     <?php } else { ?>
                         <th></th>
@@ -93,14 +87,15 @@ if ($cont < 0) {
     <form action="respuesta.php" method="post">
         <p>Escribe tu respuesta</p>
 
-        <input type="hidden" name="tabla"
-                value="<?php echo base64_encode(serialize($tabla)); ?>">
+        <input type="hidden" name="tabla" value="<?php echo base64_encode(serialize($tabla)); ?>">
 
-        <input type="hidden" name="cont"
-               value="<?php echo $cont; ?>">
+        <input type="hidden" name="cont" value="<?php echo $cont; ?>">
 
         <input type="text" name="respuesta" required>
         <input type="submit" value="Enviar">
     </form>
+    <?php }else{?>
+        <h1>Lo siento, no lo has adivinado</h1>
+    <?php }?>
 </body>
 </html>
