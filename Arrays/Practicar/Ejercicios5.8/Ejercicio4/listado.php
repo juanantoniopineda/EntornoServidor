@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -64,9 +68,20 @@
         <?php if (!isset($_REQUEST['select'])) {
             $select = [];
             echo "<h1>Selecciona una persona</h1>";
-        }else{ $select = unserialize(base64_decode($_REQUEST['select']));?>
-
-        <?php }?>
+        } else {
+            $select = unserialize(base64_decode($_REQUEST['select'])); ?>
+            <?php foreach ($select as $datos) {
+                echo $datos['nombre'];
+                echo ($datos['sexo'] == "h") ? "Hombre" : "Mujer";
+                if ($datos['orientacion'] == "het") {
+                    echo "Heterosexual";
+                } else if ($datos['orientacion'] == "hom") {
+                    echo "Homosexual";
+                } else {
+                    echo "Bisexual";
+                }
+            } ?>
+        <?php } ?>
 
 
     </table>
