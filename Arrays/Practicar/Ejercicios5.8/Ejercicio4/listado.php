@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -94,7 +90,7 @@
         <h2>Seleccione una para emparejar</h2>
         <table>
 
-            <form action="" method="post">
+            <form action="pareja.php" method="post">
 
                 <input type="hidden" name="personas" value="<?php echo base64_encode(serialize($personas)); ?>">
                 <input type="hidden" name="select" value="<?php echo base64_encode(serialize($select)); ?>">
