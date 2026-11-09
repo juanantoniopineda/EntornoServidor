@@ -1,5 +1,6 @@
-
 <?php
+require_once "funciones.php";
+
 if (!isset($_REQUEST["apuesta"])) {
     $apuesta = [];
     $bandera = false;
@@ -49,6 +50,8 @@ if (!isset($_REQUEST["apuesta"])) {
 
             Serie <input type="text" name="serie"><br>
 
+            Texto (Opcional) <input type="text" name="texto"><br>
+
             <input type="hidden" name="apuesta"
                 value="<?php echo base64_encode(serialize($apuesta)); ?>">
 
@@ -60,7 +63,11 @@ if (!isset($_REQUEST["apuesta"])) {
             <p>Has introducido números repetidos.</p>
         <?php } ?>
 
-    <?php } ?>
+    <?php } else{?>
+        <?php $resultadoFinal = combinacion($apuesta);
+              echo imprimeApuesta($resultadoFinal,$_REQUEST["texto"]);
+        ?>
+    <?php }?>
 
 </body>
 </html>
