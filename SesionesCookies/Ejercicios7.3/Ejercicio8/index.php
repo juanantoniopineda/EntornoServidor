@@ -17,6 +17,7 @@ if (isset($_COOKIE["diccionario"])) {
 } else {
     $diccionario = $diccionarioInicial;
     setcookie("diccionario", serialize($diccionario), time() + 3600);
+    header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -44,6 +45,10 @@ if (isset($_COOKIE["diccionario"])) {
     <hr>
     <form action="index.php" method="post">
         <input type="submit" value="Jugar otra vez">
+    </form>
+    <hr>
+    <form action="administrar.php" method="post">
+        <input type="submit" value="Administrar los pares de palabras">
     </form>
 </body>
 
